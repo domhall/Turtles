@@ -28,3 +28,8 @@ resource "github_actions_secret" "aws_secret_key" {
   secret_name     = "aws_secret_key"
   plaintext_value = var.turtle_secret_access_key
 }
+resource "github_actions_secret" "github_token" {
+  repository      = github_repository.turtles.name
+  secret_name     = "github_token"
+  plaintext_value = var.github_token
+}
