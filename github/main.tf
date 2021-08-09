@@ -6,12 +6,10 @@ terraform {
     }
   }
 }
-
 # Configure the GitHub Provider
 provider "github" {
   token = var.github_token
 }
-
 resource "github_repository" "turtles" {
   name        = "Turtles"
   description = "It's Turtles all the way down"
@@ -24,7 +22,7 @@ resource "github_actions_secret" "aws_key" {
   plaintext_value = var.turtle_access_key
 }
 resource "github_actions_secret" "aws_secret_key" {
-  repository    = github_repository.turtles.name
+  repository      = github_repository.turtles.name
   secret_name     = "AWS_SECRET_KEY"
   plaintext_value = var.turtle_secret_access_key
 }
