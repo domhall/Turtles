@@ -6,12 +6,10 @@ terraform {
     }
   }
 }
-
 # Configure the GitHub Provider
 provider "github" {
   token = var.github_token
 }
-
 resource "github_repository" "turtles" {
   name        = "Turtles"
   description = "It's Turtles all the way down"
