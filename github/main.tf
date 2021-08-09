@@ -20,16 +20,16 @@ resource "github_repository" "turtles" {
 }
 resource "github_actions_secret" "aws_key" {
   repository      = github_repository.turtles.name
-  secret_name     = "aws_key"
+  secret_name     = "AWS_KEY"
   plaintext_value = var.turtle_access_key
 }
 resource "github_actions_secret" "aws_secret_key" {
   repository      = github_repository.turtles.name
-  secret_name     = "aws_secret_key"
+  secret_name     = "AWS_SECRET_KEY"
   plaintext_value = var.turtle_secret_access_key
 }
 resource "github_actions_secret" "github_token" {
   repository      = github_repository.turtles.name
-  secret_name     = "github_token"
+  secret_name     = "TOKEN_GITHUB"
   plaintext_value = var.github_token
 }
