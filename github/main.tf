@@ -16,6 +16,12 @@ resource "github_repository" "turtles" {
 
   visibility = "public"
 }
+resource "github_repository" "turtles_again" {
+  name        = "Turtles again"
+  description = "It's Turtles all the way down all the way down"
+
+  visibility = "public"
+}
 resource "github_actions_secret" "aws_key" {
   repository      = github_repository.turtles.name
   secret_name     = "AWS_KEY"
